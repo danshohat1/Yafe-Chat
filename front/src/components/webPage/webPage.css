@@ -1,0 +1,65 @@
+#body{
+    background-image: url("../../images/cool.gif");
+    background-size: 100%;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    text-align: center;  
+}
+.container {
+    display: flex;
+    position: absolute;
+    margin: 0 auto;
+    flex-direction: column;
+    justify-content: space-between;
+    background: #FFFFFF;
+    border-radius: 8px;
+    height: 60%;
+    width: 35%;
+    overflow-y: scroll;
+  }
+  .outerContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #1A1A1D;
+
+  }
+
+
+
+  .messages {
+    padding: 5% 0;
+    flex: auto;
+    overflow: auto;
+  }
+
+  .bubble {
+    display: block;
+    position: absolute;
+    left: 2%;
+    top: 5%;
+    background: gray;
+    border-radius: 20px;
+    padding: 5px 3px 3px 5px;
+    margin-bottom: 20px;
+  }
+
+  #chat {
+    width: 100%;
+    height: 100%;
+  }
+  #chat-form {
+
+    
+  }
+  .message-input{
+    width: 35vw;
+    height: 7vh;
+    display: block;
+    position: absolute;
+    top: 80.5vh;
+  
+    border-radius: 8px;
+  }

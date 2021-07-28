@@ -12,7 +12,7 @@ const app = express()
 const server = http.createServer(app)
 const io = socketio(server)
 
-const messages = []
+let messages = []
 
 
 //middlewares
@@ -53,7 +53,8 @@ io.on("connection" , socket => {
     console.log("new connection")
     socket.on("message" , miew => {
         messages.push(miew)
-        io.emit("response" , messages)
+        console.log(messages)
+        socket.emit("response" , messages)
     })
     socket.on("disconnect" , res => {
         console.log("user disconnected")

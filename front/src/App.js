@@ -1,7 +1,8 @@
 // imports
 import {BrowserRouter as Router, Route, Switch , Redirect} from "react-router-dom"
 import Home from "./components/Home/Home.js"
-import Web from "./components/webPage"
+import Web from "./components/webPage/webPage"
+import {io} from "socket.io-client"
 
 function App() {
   return (
@@ -13,17 +14,18 @@ function App() {
           
           <Route path = "/home"            
                 render={() =>
-                    localStorage.getItem('username') ? (
-                      <Web username = {window.localStorage.getItem("username")} socket = {window.localStorage.getItem("socket")}/>
+                  sessionStorage.getItem('username') ? (
+                
+                      <Web username = {window.sessionStorage.getItem("username")} socket = {io("http://localhost:5000" , {transports : ["websocket"]})}/>
                     ) : (
                             <Redirect to="/" />
                     )}
              />
           <Route path = "/"  render={() =>
-                    localStorage.getItem('username') ? (
-                      <Web username = {window.localStorage.getItem("username")} socket = {window.localStorage.getItem("socket")}/>
+                    sessionStorage.getItem('username') ? (
+                      <Redirect to = "/home" />
                     ) : (
-                            <Home />
+                      <Home />
                     )}>
           </Route>
         </Switch>

@@ -31,7 +31,7 @@ export default function Home() {
                 //add error screen screen
                 return
             }
-            window.localStorage.setItem('username', res.data.username);
+            window.sessionStorage.setItem('username', res.data.username);
             window.location.reload();
         })
    

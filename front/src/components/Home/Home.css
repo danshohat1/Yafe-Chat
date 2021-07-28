@@ -30,3 +30,8 @@
 .hide{
     display: None;
 }
+
+#scroll{ 
+    width: 100%;
+    height: 100%;
+}
